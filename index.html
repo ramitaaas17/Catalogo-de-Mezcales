@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezcales Artesanales - Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modal de Verificación de Edad -->
+<div id="ageModal" class="age-modal">
+    <div class="age-modal-content">
+        <div class="age-modal-header">
+            <h2>Verificación de Edad</h2>
+            <div class="agave-icon">🌵</div>
+        </div>
+        <div class="age-modal-body">
+            <p>Este sitio web contiene información sobre bebidas alcohólicas.</p>
+            <p><strong>¿Eres mayor de 18 años?</strong></p>
+            <div class="age-buttons">
+                <button id="ageYes" class="age-btn yes">Sí, soy mayor de 18</button>
+                <button id="ageNo" class="age-btn no">No, soy menor de 18</button>
+            </div>
+        </div>
+        <div class="age-modal-footer">
+            <p>Bebe con responsabilidad</p>
+        </div>
+    </div>
+</div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1>Catálogo de Mezcales</h1>
+                <p>Distribución y Venta de Mezcales Artesanales</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Notification Banner -->
+    <div id="disclaimerNotification" class="notification-banner">
+        <div class="notification-content">
+            <div class="notification-icon">ℹ</div>
+            <div class="notification-text">
+                <strong>Aviso Importante:</strong> Somos un distribuidor autorizado de mezcales artesanales mexicanos. Este catálogo muestra productos de diferentes productores y marcas. No fabricamos estos productos, únicamente los distribuimos. 
+            </div>
+            <button id="closeNotification" class="notification-close">&times;</button>
+        </div>
+    </div>
+    <!-- Catálogo Section -->
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <h2 class="section-title">Catálogo de Mezcales</h2>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="espadín">Espadín</button>
+                <button class="filter-btn" data-filter="tobala">Tobalá</button>
+                <button class="filter-btn" data-filter="arroqueño">Arroqueño</button>
+                <button class="filter-btn" data-filter="especial">Especiales</button>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Producto 1 - Espadín Joven -->
+                <div class="product-card" data-category="espadín">
+                    <div class="product-image">
+                        <img src="productos/AgaveArtesanalBlancoOroOax-750.jpeg" alt="Mezcal Espadín Joven">
+                        <div class="product-badge">Nuevo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Artesanal Blanco</h3>
+                        <p class="product-description">Destilado en alambique de cobre con notas frutales y ahumadas que despiertan los sentidos. El equilibrio perfecto entre tradición y sabor.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$890 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 - Tobalá Reposado -->
+                <div class="product-card" data-category="tobala">
+                    <div class="product-image">
+                        <img src="productos/AgaveEspadinAbocadoOroOax-750.jpg" alt="Mezcal Tobalá Reposado">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal de Magey Espadin Abocado con Gusano</h3>
+                        <p class="product-description"> Con gusano incluido, este mezcal abocado ofrece un sabor suave y místico que conecta con las raíces oaxaqueñas.</p>
+                        <div class="product-details">
+                            <span class="product-grade">38% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$520 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 - Arroqueño Añejo -->
+                <div class="product-card" data-category="arroqueño">
+                    <div class="product-image">
+                        <img src="productos/AgaveEspadinAbocadoOroOX-1000.jpg" alt="Mezcal Arroqueño Añejo">
+                        <div class="product-badge special">Limitado</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal de Magey Espadin Abocado con Gusano </h3>
+                        <p class="product-description">Presentación familiar del clásico abocado con gusano. Ideal para compartir momentos especiales con amigos.</p>
+                        <div class="product-details">
+                            <span class="product-grade">38% Alc. Vol.</span>
+                            <span class="product-size">1000 ml</span>
+                        </div>
+                        <div class="product-price">$580 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 - Pechuga Especial -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/AgaveEspadinCuishePuntaReal-750.jpg" alt="Mezcal Pechuga Especial">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Ensamble Agave Espadin </h3>
+                        <p class="product-description">Ensamble único con 45% de alcohol que combina tradición ancestral con técnicas de destilación especializadas.</p>
+                        <div class="product-details">
+                            <span class="product-grade">45% Alc. Vol.</span>
+                            <span class="product-size">1000 ml</span>
+                        </div>
+                        <div class="product-price">$1370 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 - Cuishe Oro -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/AgaveJovenEspadinLani-750.jpeg" alt="Mezcal Cuishe Oro">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal 100% Agave Joven/Espadin</h3>
+                        <p class="product-description">El mezcal perfecto para iniciarse en el mundo del agave. Suave, natural y tradicionalmente elaborado.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$300 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 6 - Maguey Silvestre Mixto -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/EspadinLaniCafe-Añejo1.jpeg" alt="Mezcal Maguey Silvestre Mixto">
+                        <div class="product-badge special">Edición Especial</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal 100% Agave Añejo 1 Año-Espadin </h3>
+                        <p class="product-description">Un año de reposo que transforma el agave en una experiencia suave y compleja. Elegancia en cada sorbo.</p>
+                        <div class="product-details">
+                            <span class="product-grade">36% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$350 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+                                <!-- Producto 6 - Maguey Silvestre Mixto -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/PechugaEspadinLani.jpeg" alt="Mezcal Maguey Silvestre Mixto">
+                        <div class="product-badge special">Edición Especial</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Pechuga Espadin </h3>
+                        <p class="product-description">Proceso ancestral que incluye pechuga en la destilación, creando un perfil aromático excepcional y tradicional.</p>
+                        <div class="product-details">
+                            <span class="product-grade">36% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$330 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 7 - Tepextate Maguey -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/Añejo7AñosOroOax-375.jpeg" alt="Mezcal Añejo 7 años">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal 7 Años Añejo</h3>
+                        <p class="product-description">Concentrado de tiempo y sabor en presentación especial. Lujo líquido para paladares exigentes.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">375ml</span>
+                        </div>
+                        <div class="product-price">$615 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 8 - Blanco Maguey Cuishe -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/Añejo7AñosOroOax-750.jpg" alt="Mezcal Añejo 7 años ">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal 7 Años Añejo</h3>
+                        <p class="product-description">Siete años de maduración crean un mezcal excepcional con notas complejas y final prolongado.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$995 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 9 - Curado Frutas -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/BlancoMagueyCuishBrutos-375.png" alt="Mezcal Maguey Cuish">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Maguey Cuish</h3>
+                        <p class="product-description"> Agave cuish con 46% de alcohol que ofrece mineralidad única y carácter intenso del maguey salvaje.</p>
+                        <div class="product-details">
+                            <span class="product-grade">46% Alc. Vol.</span>
+                            <span class="product-size">375ml</span>
+                        </div>
+                        <div class="product-price">$680 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 10 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/CremaMezcalSabores1-750.jpeg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crema de Mezcal</h3>
+                        <p class="product-description">Crema artesanal a base de mezcal con sabores frutales (Piña colada, Moka, Beso de Angel).</p>
+                        <div class="product-details">
+                            <span class="product-grade">17% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$195 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 11 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/CremasMezcalSabores2-750.jpeg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crema de Mezcal</h3>
+                        <p class="product-description">Crema artesanal a base de mezcal con sabores frutales (Nuez,Ferrero, Pistache).</p>
+                        <div class="product-details">
+                            <span class="product-grade">17% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$195 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 12 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/CremasMezcalSabores3-750.jpeg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crema de Mezcal</h3>
+                        <p class="product-description">Crema artesanal a base de mezcal con sabores frutales (Coco, Cacahuate, Menta).</p>
+                        <div class="product-details">
+                            <span class="product-grade">17% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$195 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 10 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/CuradoFrutasBrutos.png" alt="Curados de Frutas">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Curados de Frutas </h3>
+                        <p class="product-description">Concentrados de frutas con mezcal 100% artesanal. (Jamaica,Tamarindo,Maracuya). </p>
+                        <div class="product-details">
+                            <span class="product-grade">17% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$350 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+
+                                <!-- Producto 15 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/FrutiCreamSbores.jpg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FrutiCream</h3>
+                        <p class="product-description">Crema artesanal a base de mezcal con sabores frutales (Cajeta, Cafe, Capucchino, Coco, Moka, Piña Colada, Citricos, Guanabana, Jamaica, Mango, Nuez).</p>
+                        <div class="product-details">
+                            <span class="product-grade">35% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$420 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 16 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/LaniAñejo5AÑOS.jpeg" alt="Mezcal Añejo 5 Años">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Añejo 5 Años</h3>
+                        <p class="product-description">Mezcal Lani con maduración prolongada que ofrece suavidad y complejidad a precio accesible. </p>
+                        <div class="product-details">
+                            <span class="product-grade">30% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$340 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                
+
+                                <!-- Producto 17 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/MagueySilvestre(tobala, tepextate y cuishe)-750.jpg" alt="Maguey Silvestre a Granel">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Maguey Silvestre a Granel</h3>
+                        <p class="product-description">Mezcal blanco a granel (Tepestate, Tobala, Cuishe)</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">1000ml</span>
+                        </div>
+                        <div class="product-price">$670 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 18 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/MecalPechugaGranel-1000.jpeg" alt="Mezcal a Granel">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal a Granel Pechuga de Maguey </h3>
+                        <p class="product-description">Mezcal a granel de tipo pechuga de maguey en presenación de litro</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">350ml</span>
+                        </div>
+                        <div class="product-price">$350 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                 <!-- Producto 21 - Crema de Mezcal ()Recortar-->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/MezcalGranel-1000.jpeg" alt="Mezcal Blanco a Granel">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Blanco a granel </h3>
+                        <p class="product-description">Mezcal blanco tradicional en presentación de litro. Ideal para conocedores que buscan autenticidad.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">1000ml</span>
+                        </div>
+                        <div class="product-price">$350 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 22 - Crema de Mezcal (recortar) -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/PechugaDe Pavo 2.jpeg" alt="Mezcal Pechuga de pavo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Pechuga de pavo</h3>
+                        <p class="product-description">Destilado con pechuga de pavo siguiendo rituales ancestrales. Sabor único y experiencia incomparable.</p>
+                        <div class="product-details">
+                            <span class="product-grade">38% Alc. Vol.</span>
+                            <span class="product-size">700ml</span>
+                        </div>
+                        <div class="product-price">$850 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 23 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/PechugaPavoPuntaReal-375.jpg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Pechuga de Pavo</h3>
+                        <p class="product-description">La misma calidad ceremonial en presentación individual. Perfecto para degustaciones especiales.</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">375ml</span>
+                        </div>
+                        <div class="product-price">$520 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 24 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/Presentacioon.jpeg" alt="kit de Regalo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit de Regalo</h3>
+                        <p class="product-description">Incluye mezcal premium, sal de gusano y caballito tradicional. El regalo perfecto para amantes del mezcal.</p>
+                        <div class="product-details">
+                            <span class="product-grade">46% Alc. Vol.</span>
+                            <span class="product-size">700ml</span>
+                        </div>
+                        <div class="product-price">$1490 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 25 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/ JovenTobala-LANI .jpeg" alt="JovenTobala Lani">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Joven Tobala</h3>
+                        <p class="product-description">Tobala joven con 43% de alcohol que ofrece la elegancia y complejidad del agave más apreciado.</p>
+                        <div class="product-details">
+                            <span class="product-grade">43% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$450 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 25 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/Tepextate-LANI.jpeg" alt="Tepextate Lani">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Tepextate</h3>
+                        <p class="product-description">Agave de crecimiento lento con 45% de alcohol. Mineralidad intensa y carácter único del tepextate.</p>
+                        <div class="product-details">
+                            <span class="product-grade">45% Alc. Vol.</span>
+                            <span class="product-size">750ml</span>
+                        </div>
+                        <div class="product-price">$595 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 26 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/TepextateMagueySilvestrePuntaReal-375.jpg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Tepextate </h3>
+                        <p class="product-description">Mezcal Tepextate presentacion chica (No incluye sal de gusano)</p>
+                        <div class="product-details">
+                            <span class="product-grade">40% Alc. Vol.</span>
+                            <span class="product-size">375ml</span>
+                        </div>
+                        <div class="product-price">$995 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                                <!-- Producto 27 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/TepextateMagueySilvestrePuntaReal-750.jpg" alt="Mezcal Tepztate">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Tepztate</h3>
+                        <p class="product-description">Presentación premium del tepextate más exclusivo. Para ocasiones extraordinarias.</p>
+                        <div class="product-details">
+                            <span class="product-grade">46% Alc. Vol.</span>
+                            <span class="product-size">700ml</span>
+                        </div>
+                        <div class="product-price">$1410 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 28 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/TobalaMagueySilvestrePuntaReal-375.jpg" alt="Mezcal Tobala">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Tobala </h3>
+                        <p class="product-description">Mezcal Tobala presentacion chica (No incluye sal de gusano)</p>
+                        <div class="product-details">
+                            <span class="product-grade">46% Alc. Vol.</span>
+                            <span class="product-size">375ml</span>
+                        </div>
+                        <div class="product-price">$640 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 29 - Crema de Mezcal -->
+                <div class="product-card" data-category="especial">
+                    <div class="product-image">
+                        <img src="productos/TobalaMagueySilvestrePuntaReal-750.jpg" alt="Crema de Mezcal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mezcal Tobala </h3>
+                        <p class="product-description">Tobala premium en presentación grande. La expresión más fina del agave silvestre más valorado.</p>
+                        <div class="product-details">
+                            <span class="product-grade">46% Alc. Vol.</span>
+                            <span class="product-size">700ml</span>
+                        </div>
+                        <div class="product-price">$1200 MXN</div>
+                        <button class="product-btn">Contactar</button>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>WhatsApp</h3>
+                        <p>Envíanos un mensaje directo</p>
+                        <p>+52 XXX XXX XXXX</p>
+                        <button class="contact-btn whatsapp">Enviar Mensaje</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Distribuidor de Mezcales</h3>
+                        <p>Catálogo de distribución de mezcales artesanales mexicanos</p>
+                        <p><small><strong>Aviso:</strong> Este es un catálogo de distribución. No somos fabricantes ni marca propia. Todos los productos son de terceros.</small></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Información</h4>
+                        <ul>
+                            <li><a href="#catalogo">Catálogo</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                            <li>Distribución autorizada</li>
+                            <li>Productos de terceros</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <p>WhatsApp: +52 XXX XXX XXXX</p>
+                        <p>Email: contacto@distribuidormezcales.com</p>
+                        <p><small>Consumo responsable +18</small></p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Distribuidor de Mezcales - Catálogo de productos de terceros</p>
+                    <p><small>Bebe con moderación. Prohibida la venta a menores de edad.</small></p>
+                </div>
+            </div>
+        </footer>
+
+    <!-- Modal para imágenes expandidas -->
+    <div id="imageModal" class="image-modal">
+        <span class="close">&times;</span>
+        <img id="modalImage" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
