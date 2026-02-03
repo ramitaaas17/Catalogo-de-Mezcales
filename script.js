@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== SISTEMA DE CONTACTO WHATSAPP =====
 
 // Configuración del número de WhatsApp (cambiar por el número real)
-const WHATSAPP_NUMBER = '5539700671'; // Formato: 52 + código de área + número
+const WHATSAPP_NUMBER = '5549542989'; // Formato: 52 + código de área + número
 
 // ===== FUNCIONES PRINCIPALES =====
 
