@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mezcales Artesanales - Catálogo</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌵</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +14,7 @@
     <div class="age-modal-content">
         <div class="age-modal-header">
             <h2>Verificación de Edad</h2>
-            <div class="agave-icon">🌵</div>
+            <div class="age-icon" aria-hidden="true">18+</div>
         </div>
         <div class="age-modal-body">
             <p>Este sitio web contiene información sobre bebidas alcohólicas.</p>
@@ -34,9 +33,9 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <h1>Catálogo de Mezcales</h1>
+                <h1>Mezcales Artesanales</h1>
                 <p>Distribución y Venta de Mezcales Artesanales</p>
-                <p>*El precio de los productos no incluye costo de envio* </p>
+                <p class="shipping-note">Precios en MXN. Envío cotizado por separado.</p>
             </div>
             <ul class="nav-links">
                 <li><a href="#catalogo">Catálogo</a></li>
@@ -44,33 +43,59 @@
             </ul>
         </nav>
     </header>
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="eyebrow">De México, para compartir</p>
+                <h2 id="hero-title">El arte de un<br>buen <em>mezcal.</em></h2>
+                <p class="hero-description">Historias de agave, tradición y sabores que se quedan contigo. Descubre nuestra selección de mezcales artesanales.</p>
+                <a class="hero-link" href="#catalogo">Explorar la colección <span aria-hidden="true">&rarr;</span></a>
+                <div class="hero-notes"><span>Distintos productores</span><span>Pedidos por WhatsApp</span></div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-backdrop" aria-hidden="true"></div>
+                <div class="hero-bottle hero-carousel" role="region" aria-roledescription="carrusel" aria-label="Selección de mezcales artesanales">
+                    <img class="hero-slide" src="productos/LaniEspadin-750ml.jpeg" alt="Mezcal Lani Espadín añejo de un año" fetchpriority="high" decoding="async">
+                    <img class="hero-slide" src="productos/ JovenTobala-LANI .jpeg" alt="Mezcal Lani joven Tobalá" decoding="async">
+                    <img class="hero-slide" src="productos/Tepextate-LANI.jpeg" alt="Mezcal Lani Tepextate" decoding="async">
+                    <div class="carousel-indicators" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+                <div class="hero-photo-note"><span class="hero-note-number" aria-hidden="true">/</span><div><span class="hero-caption">Agave. Tierra. Tradición.</span><p>Una selección con espíritu artesanal.</p></div></div>
+            </div>
+        </div>
+    </section>
     <!-- Notification Banner -->
     <div id="disclaimerNotification" class="notification-banner">
         <div class="notification-content">
-            <div class="notification-icon">ℹ</div>
             <div class="notification-text">
                 <strong>Aviso Importante:</strong> Somos un distribuidor de mezcales artesanales mexicanos. Este catálogo muestra productos de diferentes productores y marcas. No fabricamos estos productos, únicamente los distribuimos. 
             </div>
-            <button id="closeNotification" class="notification-close">&times;</button>
+            <button id="closeNotification" class="notification-close" aria-label="Cerrar aviso">&times;</button>
         </div>
     </div>
     <!-- Catálogo Section -->
     <section id="catalogo" class="catalog">
         <div class="container">
-            <h2 class="section-title">Catálogo de Mezcales</h2>
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="espadín">Espadín</button>
-                <button class="filter-btn" data-filter="tobala">Tobalá</button>
-                <button class="filter-btn" data-filter="arroqueño">Arroqueño</button>
-                <button class="filter-btn" data-filter="especial">Especiales</button>
+            <p class="catalog-eyebrow">Selección artesanal mexicana</p>
+            <h2 class="section-title">Un mezcal para <em>cada momento.</em></h2>
+            <p class="catalog-intro">Explora nuestras botellas, cremas y especialidades. Elige un tipo de producto y consulta disponibilidad por WhatsApp.</p>
+            <div class="filter-heading"><span>Tipo de producto</span><span>Desliza para ver más &rarr;</span></div>
+            <div class="filter-tabs" role="group" aria-label="Filtrar por tipo de producto">
+                <button type="button" class="filter-btn active" data-filter="all">Todos <span class="filter-count">28</span></button>
+                <button type="button" class="filter-btn" data-filter="blancos">Jóvenes y blancos <span class="filter-count">10</span></button>
+                <button type="button" class="filter-btn" data-filter="anejos">Añejos <span class="filter-count">4</span></button>
+                <button type="button" class="filter-btn" data-filter="abocados">Abocados <span class="filter-count">2</span></button>
+                <button type="button" class="filter-btn" data-filter="pechugas">Pechugas <span class="filter-count">4</span></button>
+                <button type="button" class="filter-btn" data-filter="ensambles">Ensambles <span class="filter-count">1</span></button>
+                <button type="button" class="filter-btn" data-filter="cremas">Cremas y curados <span class="filter-count">5</span></button>
+                <button type="button" class="filter-btn" data-filter="regalos">Regalos y accesorios <span class="filter-count">2</span></button>
             </div>
             
             <div class="products-grid">
                 <!-- Producto 1 - Espadín Joven -->
-                <div class="product-card" data-category="espadín">
+                <div class="product-card" data-category="regalos">
                     <div class="product-image">
-                        <img src="productos/CaballitoMezcal.jpeg" alt="CaballitoMezcal">
+                        <img loading="lazy" decoding="async" src="productos/CaballitoMezcal.jpeg" alt="CaballitoMezcal">
                         <div class="product-badge">Nuevo</div>
                     </div>
                     <div class="product-info">
@@ -80,12 +105,12 @@
                             <span class="product-size">45ml</span>
                         </div>
                         <div class="product-price">$45 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
-                <div class="product-card" data-category="espadín">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/AgaveArtesanalBlancoOroOax-750.jpeg" alt="Mezcal Espadín Joven">
+                        <img loading="lazy" decoding="async" src="productos/AgaveArtesanalBlancoOroOax-750.jpeg" alt="Mezcal Espadín Joven">
                         <div class="product-badge">Nuevo</div>
                     </div>
                     <div class="product-info">
@@ -95,50 +120,50 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$995 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1010 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 2 - Tobalá Reposado -->
-                <div class="product-card" data-category="tobala">
+                <div class="product-card" data-category="abocados">
                     <div class="product-image">
-                        <img src="productos/AgaveEspadinAbocadoOroOax-750.jpg" alt="Mezcal Tobalá Reposado">
+                        <img loading="lazy" decoding="async" src="productos/AgaveEspadinAbocadoOroOax-750.jpg" alt="Mezcal Tobalá Reposado">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Mezcal de Magey Espadin Abocado con Gusano</h3>
+                        <h3 class="product-name">Mezcal de Maguey Espadín Abocado con Gusano</h3>
                         <p class="product-description"> Con gusano incluido, este mezcal abocado ofrece un sabor suave y místico que conecta con las raíces oaxaqueñas.</p>
                         <div class="product-details">
                             <span class="product-grade">38% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$535 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$550 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 3 - Arroqueño Añejo -->
-                <div class="product-card" data-category="arroqueño">
+                <div class="product-card" data-category="abocados">
                     <div class="product-image">
-                        <img src="productos/AgaveEspadinAbocadoOroOX-1000.jpg" alt="Mezcal Arroqueño Añejo">
+                        <img loading="lazy" decoding="async" src="productos/AgaveEspadinAbocadoOroOX-1000.jpg" alt="Mezcal Arroqueño Añejo">
                         <div class="product-badge special">Limitado</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Mezcal de Magey Espadin Abocado con Gusano </h3>
+                        <h3 class="product-name">Mezcal de Maguey Espadín Abocado con Gusano </h3>
                         <p class="product-description">Presentación familiar del clásico abocado con gusano. Ideal para compartir momentos especiales con amigos.</p>
                         <div class="product-details">
                             <span class="product-grade">38% Alc. Vol.</span>
                             <span class="product-size">1000 ml</span>
                         </div>
-                        <div class="product-price">$600 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$615 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 4 - Pechuga Especial -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="ensambles">
                     <div class="product-image">
-                        <img src="productos/AgaveEspadinCuishePuntaReal-750.jpg" alt="Mezcal Pechuga Especial">
+                        <img loading="lazy" decoding="async" src="productos/AgaveEspadinCuishePuntaReal-750.jpg" alt="Mezcal Pechuga Especial">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Ensamble Agave Espadin </h3>
@@ -147,15 +172,15 @@
                             <span class="product-grade">45% Alc. Vol.</span>
                             <span class="product-size">1000 ml</span>
                         </div>
-                        <div class="product-price">$1625 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1640 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 5 - Cuishe Oro -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/AgaveJovenEspadinLani-750.jpeg" alt="Mezcal Cuishe Oro">
+                        <img loading="lazy" decoding="async" src="productos/AgaveJovenEspadinLani-750.jpeg" alt="Mezcal Cuishe Oro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal 100% Agave Joven/Espadin</h3>
@@ -164,15 +189,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$315 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$330 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 6 - Maguey Silvestre Mixto -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="anejos">
                     <div class="product-image">
-                        <img src="productos/EspadinLaniCafe-Añejo1.jpeg" alt="Mezcal Maguey Silvestre Mixto">
+                        <img loading="lazy" decoding="async" src="productos/EspadinLaniCafe-Añejo1.jpeg" alt="Mezcal Maguey Silvestre Mixto">
                         <div class="product-badge special">Edición Especial</div>
                     </div>
                     <div class="product-info">
@@ -182,14 +207,14 @@
                             <span class="product-grade">36% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$365 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$380 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
                                 <!-- Producto 6 - Maguey Silvestre Mixto -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="pechugas">
                     <div class="product-image">
-                        <img src="productos/PechugaEspadinLani.jpeg" alt="Mezcal Maguey Silvestre Mixto">
+                        <img loading="lazy" decoding="async" src="productos/PechugaEspadinLani.jpeg" alt="Mezcal Maguey Silvestre Mixto">
                         <div class="product-badge special">Edición Especial</div>
                     </div>
                     <div class="product-info">
@@ -199,16 +224,16 @@
                             <span class="product-grade">36% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$355 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$370 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
 
                 <!-- Producto 7 - Tepextate Maguey -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="anejos">
                     <div class="product-image">
-                        <img src="productos/Añejo7AñosOroOax-375.jpeg" alt="Mezcal Añejo 7 años">
+                        <img loading="lazy" decoding="async" src="productos/Añejo7AñosOroOax-375.jpeg" alt="Mezcal Añejo 7 años">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal 7 Años Añejo</h3>
@@ -217,15 +242,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">375ml</span>
                         </div>
-                        <div class="product-price">$650 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$665 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 8 - Blanco Maguey Cuishe -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="anejos">
                     <div class="product-image">
-                        <img src="productos/Añejo7AñosOroOax-750.jpg" alt="Mezcal Añejo 7 años ">
+                        <img loading="lazy" decoding="async" src="productos/Añejo7AñosOroOax-750.jpg" alt="Mezcal Añejo 7 años ">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal 7 Años Añejo</h3>
@@ -234,15 +259,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$1010 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1025 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 9 - Curado Frutas -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/BlancoMagueyCuishBrutos-375.png" alt="Mezcal Maguey Cuish">
+                        <img loading="lazy" decoding="async" src="productos/BlancoMagueyCuishBrutos-375.png" alt="Mezcal Maguey Cuish">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Maguey Cuish</h3>
@@ -251,15 +276,15 @@
                             <span class="product-grade">46% Alc. Vol.</span>
                             <span class="product-size">375ml</span>
                         </div>
-                        <div class="product-price">$660 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$675 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 10 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="cremas">
                     <div class="product-image">
-                        <img src="productos/CremaMezcalSabores1-750.jpeg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/CremaMezcalSabores1-750.jpeg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Crema de Mezcal</h3>
@@ -268,15 +293,15 @@
                             <span class="product-grade">17% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$195 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$210 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 11 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="cremas">
                     <div class="product-image">
-                        <img src="productos/CremasMezcalSabores2-750.jpeg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/CremasMezcalSabores2-750.jpeg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Crema de Mezcal</h3>
@@ -285,15 +310,15 @@
                             <span class="product-grade">17% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$195 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$210 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 12 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="cremas">
                     <div class="product-image">
-                        <img src="productos/CremasMezcalSabores3-750.jpeg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/CremasMezcalSabores3-750.jpeg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Crema de Mezcal</h3>
@@ -302,15 +327,15 @@
                             <span class="product-grade">17% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$195 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$210 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 10 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="cremas">
                     <div class="product-image">
-                        <img src="productos/CuradoFrutasBrutos.png" alt="Curados de Frutas">
+                        <img loading="lazy" decoding="async" src="productos/CuradoFrutasBrutos.png" alt="Curados de Frutas">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Curados de Frutas </h3>
@@ -319,16 +344,16 @@
                             <span class="product-grade">17% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$405 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$420 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
 
                                 <!-- Producto 15 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="cremas">
                     <div class="product-image">
-                        <img src="productos/FrutiCreamSbores.jpg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/FrutiCreamSbores.jpg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">FrutiCream</h3>
@@ -337,15 +362,15 @@
                             <span class="product-grade">35% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$430 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$445 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 16 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="anejos">
                     <div class="product-image">
-                        <img src="productos/LaniAñejo5AÑOS.jpeg" alt="Mezcal Añejo 5 Años">
+                        <img loading="lazy" decoding="async" src="productos/LaniAñejo5AÑOS.jpeg" alt="Mezcal Añejo 5 Años">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Añejo 5 Años</h3>
@@ -354,8 +379,8 @@
                             <span class="product-grade">30% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$360 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$375 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
@@ -365,7 +390,7 @@
                 <!--- -- IGNORE --
                 <div class="product-card" data-category="especial">
                     <div class="product-image">
-                        <img src="productos/MagueySilvestre(tobala, tepextate y cuishe)-750.jpg" alt="Maguey Silvestre a Granel">
+                        <img loading="lazy" decoding="async" src="productos/MagueySilvestre(tobala, tepextate y cuishe)-750.jpg" alt="Maguey Silvestre a Granel">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Maguey Silvestre a Granel</h3>
@@ -374,17 +399,17 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">1000ml</span>
                         </div>
-                        <div class="product-price">$670 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$685 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div> -- IGNORE --
-                <-- CUishe y tobala $595 --/>
-                <-- Tepextate $840  --/>
+                <-- CUishe y tobala $610 --/>
+                <-- Tepextate $855  --/>
 
                                 <!-- Producto 18 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="pechugas">
                     <div class="product-image">
-                        <img src="productos/MecalPechugaGranel-1000.jpeg" alt="Mezcal a Granel">
+                        <img loading="lazy" decoding="async" src="productos/MecalPechugaGranel-1000.jpeg" alt="Mezcal a Granel">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal a Granel Pechuga de Maguey </h3>
@@ -393,15 +418,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">1000ml</span>
                         </div>
-                        <div class="product-price">$365 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$380 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                  <!-- Producto 21 - Crema de Mezcal ()Recortar-->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/MezcalGranel-1000.jpeg" alt="Mezcal Blanco a Granel">
+                        <img loading="lazy" decoding="async" src="productos/MezcalGranel-1000.jpeg" alt="Mezcal Blanco a Granel">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Blanco a granel </h3>
@@ -410,15 +435,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">1000ml</span>
                         </div>
-                        <div class="product-price">$365 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$380 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 22 - Crema de Mezcal (recortar) -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="pechugas">
                     <div class="product-image">
-                        <img src="productos/PechugaDe Pavo 2.jpeg" alt="Mezcal Pechuga de pavo">
+                        <img loading="lazy" decoding="async" src="productos/PechugaDe Pavo 2.jpeg" alt="Mezcal Pechuga de pavo">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Pechuga de pavo</h3>
@@ -427,15 +452,15 @@
                             <span class="product-grade">38% Alc. Vol.</span>
                             <span class="product-size">700ml</span>
                         </div>
-                        <div class="product-price">$870 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$885 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 23 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="pechugas">
                     <div class="product-image">
-                        <img src="productos/PechugaPavoPuntaReal-375.jpg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/PechugaPavoPuntaReal-375.jpg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Pechuga de Pavo</h3>
@@ -444,15 +469,15 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">375ml</span>
                         </div>
-                        <div class="product-price">$545 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$560 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 24 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="regalos">
                     <div class="product-image">
-                        <img src="productos/Presentacioon.jpeg" alt="kit de Regalo">
+                        <img loading="lazy" decoding="async" src="productos/Presentacioon.jpeg" alt="kit de Regalo">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Kit de Regalo</h3>
@@ -461,15 +486,15 @@
                             <span class="product-grade">46% Alc. Vol.</span>
                             <span class="product-size">700ml</span>
                         </div>
-                        <div class="product-price">$1495 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1510 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 25 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/ JovenTobala-LANI .jpeg" alt="JovenTobala Lani">
+                        <img loading="lazy" decoding="async" src="productos/ JovenTobala-LANI .jpeg" alt="JovenTobala Lani">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Joven Tobala</h3>
@@ -478,15 +503,15 @@
                             <span class="product-grade">43% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$480 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$495 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 25 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/Tepextate-LANI.jpeg" alt="Tepextate Lani">
+                        <img loading="lazy" decoding="async" src="productos/Tepextate-LANI.jpeg" alt="Tepextate Lani">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Tepextate</h3>
@@ -495,15 +520,15 @@
                             <span class="product-grade">45% Alc. Vol.</span>
                             <span class="product-size">750ml</span>
                         </div>
-                        <div class="product-price">$595 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$610 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 26 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/TepextateMagueySilvestrePuntaReal-375.jpg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/TepextateMagueySilvestrePuntaReal-375.jpg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Tepextate </h3>
@@ -512,32 +537,32 @@
                             <span class="product-grade">40% Alc. Vol.</span>
                             <span class="product-size">375ml</span>
                         </div>
-                        <div class="product-price">$995 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1010 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                                 <!-- Producto 27 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/TepextateMagueySilvestrePuntaReal-750.jpg" alt="Mezcal Tepztate">
+                        <img loading="lazy" decoding="async" src="productos/TepextateMagueySilvestrePuntaReal-750.jpg" alt="Mezcal Tepztate">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Mezcal Tepztate</h3>
+                        <h3 class="product-name">Mezcal Tepextate</h3>
                         <p class="product-description">Presentación premium del tepextate más exclusivo. Para ocasiones extraordinarias.</p>
                         <div class="product-details">
                             <span class="product-grade">46% Alc. Vol.</span>
                             <span class="product-size">700ml</span>
                         </div>
-                        <div class="product-price">$1410 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1425 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 28 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/TobalaMagueySilvestrePuntaReal-375.jpg" alt="Mezcal Tobala">
+                        <img loading="lazy" decoding="async" src="productos/TobalaMagueySilvestrePuntaReal-375.jpg" alt="Mezcal Tobala">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Tobala </h3>
@@ -546,15 +571,15 @@
                             <span class="product-grade">46% Alc. Vol.</span>
                             <span class="product-size">375ml</span>
                         </div>
-                        <div class="product-price">$750 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$765 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
                 <!-- Producto 29 - Crema de Mezcal -->
-                <div class="product-card" data-category="especial">
+                <div class="product-card" data-category="blancos">
                     <div class="product-image">
-                        <img src="productos/TobalaMagueySilvestrePuntaReal-750.jpg" alt="Crema de Mezcal">
+                        <img loading="lazy" decoding="async" src="productos/TobalaMagueySilvestrePuntaReal-750.jpg" alt="Crema de Mezcal">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Mezcal Tobala </h3>
@@ -563,8 +588,8 @@
                             <span class="product-grade">46% Alc. Vol.</span>
                             <span class="product-size">700ml</span>
                         </div>
-                        <div class="product-price">$1290 MXN</div>
-                        <button class="product-btn">Contactar</button>
+                        <div class="product-price">$1305 MXN</div>
+                        <button class="product-btn" type="button">Pedir por WhatsApp</button>
                     </div>
                 </div>
 
@@ -577,7 +602,8 @@
     <!-- Contact Section -->
     <section id="contacto" class="contact">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
+            <p class="eyebrow">Estamos para ayudarte</p>
+            <h2 class="section-title">Tu próxima botella<br>empieza con una <em>conversación.</em></h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
